@@ -1,7 +1,80 @@
 body{
-    background: #FFFFB7;
+    background: url("img/about.jpg");
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "nav nav nav nav"
+    "main main main main"
+    "footer footer footer footer";
 }
 
+nav{ grid-area: nav;}
+main{ grid-area: main;}
+footer{ grid-area: footer;}
+
+
+/*nav*/
+
 #navbar{
-    background-color: green;
+    display: flex;
+    position: fixed;
+    width: 100%;
+    background: #111111;
+}
+
+#navbar header{
+    line-height:50px;
+	font-size:25px;
+	width:40%;
+	padding-left:40px;
+
+}
+#navbar-header{
+    text-decoration: none;
+    color:#00B0FF;
+    font-family: 'Montserrat Alternates', sans-serif
+}
+#navbar-header:hover,
+#navbar-heade:focus{
+     color:#ff5a36;
+}
+
+#navbar-nav{
+	width:60%;
+    list-style-type:none;
+    display: flex;
+	justify-content: flex-end;
+}
+
+.nav-link{
+    text-decoration: none;
+    margin:0 5px;
+    padding-right: 30px;
+    font-size: 1.3em;
+    display: block;
+    color: white;
+	cursor:pointer;
+}
+
+/*end nav*/
+
+
+
+#welcome-section{
+    background-image: url("img/about.jpg");
+    height: 50vh;
+    padding-top: 50vh;
+}
+
+#footer-cont{
+    background: #111111;
+    color: white;
+}
+
+#footer-cont p{
+    text-align: center;
 }
