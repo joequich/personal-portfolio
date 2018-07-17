@@ -10,6 +10,7 @@ body{
     "nav nav nav nav"
     "main main main main"
     "footer footer footer footer";
+    box-sizing: border-box;
 }
 
 nav{ grid-area: nav;}
@@ -22,6 +23,7 @@ footer{ grid-area: footer;}
 #navbar{
     display: flex;
     position: fixed;
+    flex-wrap: column wrap;
     width: 100%;
     background: #FFFFFF;
 }
@@ -47,7 +49,7 @@ footer{ grid-area: footer;}
 	width:60%;
     list-style-type:none;
     display: flex;
-	justify-content: flex-end;
+    justify-content:  flex-end;
 }
 
 .nav-link{
@@ -84,20 +86,21 @@ footer{ grid-area: footer;}
     padding-top: 10vh;
     background: #F8F9F9;
     text-align: center;
-    justify-content: space-around;
 }
 
-.row{
+.container{
     display: flex;
-    flex-direction: row;
-    padding-bottom: 80px;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content:  space-around;
+    text-align: center;
 }
 
 .project-tile{
-    border: 2px solid #148F77;
-    width: 350px;
-    height: 253px;
+    border: 1px solid #148F77;
+    width: 100%;
+    height: 270px;
+    margin-bottom: 30px;
 }
 
 
@@ -106,8 +109,8 @@ footer{ grid-area: footer;}
 }
 
 .image{
-    width: 300px;
-    height: 170px;
+    width: 350px;
+    height: 200px;
     border-radius: 5px;
 }
 
@@ -129,19 +132,50 @@ footer{ grid-area: footer;}
     color: #4B1549;
 }
 
-@media (max-width:800px) {
+/*medi querys*/
 
-
-    .row{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+@media (min-width: 1200px) and (max-width: 1600px){
+    .project-tile{
+        margin-bottom: 50px;
+        width: 30.3%;
     }
+}
+
+@media (min-width: 768px)and (max-width: 1200px) {
 
     .project-tile{
         margin-bottom: 50px;
+        width: 47%;
+    }
+
+    .image{
+        width: 350px;
+        height: 200px;
+        border-radius: 5px;
     }
 }
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .project-tile{
+        margin-bottom: 50px;
+        width: 80%;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .project-tile{
+        margin-bottom: 50px;
+        width: 90%;
+    }
+
+    .image{
+        width: 250px;
+        height: 200px;
+        border-radius: 5px;
+    }
+}
+
+
 
 #icons-cont{
     display: flex;
