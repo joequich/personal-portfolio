@@ -10,7 +10,6 @@ body{
     "nav nav nav nav"
     "main main main main"
     "footer footer footer footer";
-    box-sizing: border-box;
 }
 
 nav{ grid-area: nav;}
@@ -23,17 +22,16 @@ footer{ grid-area: footer;}
 #navbar{
     display: flex;
     position: fixed;
-    flex-wrap: column wrap;
     width: 100%;
+    flex-direction: column;
     background: #FFFFFF;
+    text-align: center;
 }
 
 #navbar header{
     line-height:50px;
 	font-size:25px;
-	width:40%;
-	padding-left:40px;
-
+    padding: 0;
 }
 #navbar-header{
     text-decoration: none;
@@ -46,13 +44,20 @@ footer{ grid-area: footer;}
 }
 
 #navbar-nav{
-	width:60%;
+    border: 2px solid #148F77;
     list-style-type:none;
-    display: flex;
-    justify-content:  flex-end;
+    width: 100%;
+    padding: 0;
+    margin:0;
+}
+
+
+#navbar-nav li{
+    border-bottom: 2px solid #148F77;
 }
 
 .nav-link{
+
     text-decoration: none;
     margin:0 5px;
     padding-right: 30px;
@@ -63,8 +68,6 @@ footer{ grid-area: footer;}
 }
 
 /*end nav*/
-
-
 
 #welcome-section{
     /*background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)),url("https://raw.githubusercontent.com/joequich/personal-portfolio/master/img/about.jpg");
@@ -78,8 +81,6 @@ footer{ grid-area: footer;}
     text-align: center;
     color: white;
 }
-
-
 
 #projects{
     height: 100%;
@@ -124,25 +125,91 @@ footer{ grid-area: footer;}
 
 #contacts{
     background: linear-gradient(#FBE724, #DCA630);
-    height: 50vh;
-    padding-top: 50vh;
-    display: flex;
-    flex-direction: column;
+    height: 60vh;
+    padding-top: 40vh;
     text-align: center;
     color: #4B1549;
+}
+
+#icons-cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#profile-link{
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+
+#footer-cont{
+    background: #4B1549;
+    color: white;
+}
+
+#footer-cont p{
+    text-align: center;
 }
 
 /*medi querys*/
 
 @media (min-width: 1200px) and (max-width: 1600px){
+    #navbar{
+        flex-direction: row;
+        flex-wrap: column wrap;
+        text-align: left;
+    }
+
+    #navbar header{
+    	width:40%;
+        padding-left:40px;
+    }
+
+    #navbar-nav{
+        width:60%;
+        display: flex;
+        justify-content:  flex-end;
+        border: none;
+        line-height:50px;
+    }
+
+    #navbar-nav li{
+        border-bottom: none;
+    }
+
     .project-tile{
         margin-bottom: 50px;
         width: 30.3%;
     }
+
+    #profile-link{
+        width: 50%;
+    }
 }
 
 @media (min-width: 768px)and (max-width: 1200px) {
+    #navbar{
+        flex-direction: row;
+        flex-wrap: column wrap;
+        text-align: left;
+    }
 
+    #navbar header{
+    	width:40%;
+        padding-left:40px;
+    }
+
+    #navbar-nav{
+        width:60%;
+        display: flex;
+        justify-content:  flex-end;
+        border: none;
+        line-height:50px;
+    }
+
+    #navbar-nav li{
+        border-bottom: none;
+    }
     .project-tile{
         margin-bottom: 50px;
         width: 47%;
@@ -152,6 +219,10 @@ footer{ grid-area: footer;}
         width: 350px;
         height: 200px;
         border-radius: 5px;
+    }
+
+    #profile-link{
+        width: 50%;
     }
 }
 
@@ -173,21 +244,4 @@ footer{ grid-area: footer;}
         height: 200px;
         border-radius: 5px;
     }
-}
-
-
-
-#icons-cont{
-    display: flex;
-    justify-content: space-around;
-}
-
-
-#footer-cont{
-    background: #4B1549;
-    color: white;
-}
-
-#footer-cont p{
-    text-align: center;
 }
